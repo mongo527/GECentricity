@@ -1,7 +1,7 @@
 import { StringInternal } from '../factories/factories';
 import {
     Protocol, Observation, ObservationType, Address, Phone, Immunization, Measurements,
-    PatientContact, ReferringProvider, Problem, Insurance, CarePlan, Location, Allergies, Emr, EmrMel
+    PatientContact, ReferringProvider, Problem, Insurance, CarePlan, Location, Allergies, Orders, Emr, EmrMel
 } from './classes';
 import { IArrayAdditionalMethods } from '../interfaces/interfaces';
 import { LocationType } from '../enums/enums';
@@ -51,6 +51,7 @@ export class Patient {
     private _locationsArray: IArrayAdditionalMethods<Location> = [];
     private _measurements = new Measurements(this._weight, this._height, this._mel);
     private _allergies = new Allergies(this._mel);
+    private _orders = new Orders(this._mel);
     private _referringProvider = new ReferringProvider(this._mel);
     private _phone = new Phone(this._mel);
     private _address = new Address(this._mel);
@@ -370,6 +371,10 @@ export class Patient {
         return this._allergies;
     }
 
+    get orders() {
+        return this._orders;
+    }
+
     // referring provider
     get referringProvider() {
         return this._referringProvider;
@@ -392,7 +397,7 @@ export class Patient {
     // TODO: aren't exist:
 
     // List of all orders
-    orders: Object;
+    //orders: Object;
     // List of all directives
     directives: Object;
     // Lists appointments

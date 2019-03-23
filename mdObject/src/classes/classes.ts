@@ -9,6 +9,8 @@ export { User } from './User';
 export { AllergyList } from './AllergyList'; // extends IAllergyData
 export { AllergyListRemoved } from './AllergyListRemoved'; // extends AllergyList
 export { Allergies } from './Allergies';
+export { OrderList } from './OrderList';
+export { Orders } from './Orders';
 export { Observation } from './Observation';
 export { Protocol } from './Protocol';
 export { Measurement } from './Measurement'; // extends ObsTermsMap
